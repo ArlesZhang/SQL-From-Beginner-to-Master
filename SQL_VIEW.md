@@ -95,4 +95,4 @@ WHERE calc_age(birthday) > 30;
 
 3.  **思维延伸**：“视图”提供的是一种**逻辑上的抽象**。在编程和系统设计中，你能举出其他使用了类似“视图”这种**抽象与实现分离**思想的技术或概念吗？（提示：可以从计算机网络、操作系统、软件工程中寻找答案）
 
-欢迎在 discuss 分享你的见解和经验！Welcome to follow my GitHub ！
+欢迎在 Discuss 分享你的见解和经验！Welcome to follow my GitHub ！
