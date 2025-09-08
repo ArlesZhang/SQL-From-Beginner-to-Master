@@ -22,7 +22,6 @@
 - 需按自己使用的数据库系统选择对应的建表脚本
 
 4. **重要认知**
-
 SQL excution order ：
 ```sql
 SELECT ...
