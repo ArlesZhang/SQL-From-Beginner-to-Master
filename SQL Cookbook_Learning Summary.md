@@ -49,7 +49,7 @@ ORDER BY ...
 7. **ORDER BY**
 8. **LIMIT**
 
-## 💡 Finally,三个互动思考题
+## 💡 Finally,have three questions for you
 
 1. **实践与理论**：
 在实际工作中，你遇到过哪些SQL挑战？《SQL Cookbook》中的哪些技巧可能帮助你解决这些问题？分享一个你曾经遇到的复杂查询问题及其解决方案。
