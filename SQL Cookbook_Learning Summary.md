@@ -21,7 +21,35 @@
 - 建议创建独立数据库环境进行练习
 - 需按自己使用的数据库系统选择对应的建表脚本
 
-## 💡 三个互动思考题
+4. **重要认知**
+
+SQL excution order ：
+```sql
+SELECT ...
+FROM ...
+LEFT JOIN ...
+ON ...
+WHERE ...
+GROUP BY ...
+HAVING ...
+ORDER BY ...
+```
+
+但它的 **logical excution order** 是这样的（简化版）：
+
+1. **FROM**（包括子查询）
+    - 先执行 `FROM` 子句里的表或子查询
+2. **JOIN**（包括 ON 条件）
+    - 如果有 `JOIN`，会先根据 `ON` 条件把表连接起来
+3. **WHERE**
+    - 在连接结果上，过滤掉不符合条件的行（注意：`LEFT JOIN` 的特殊性见下文）
+4. **GROUP BY**
+5. **HAVING**
+6. **SELECT**
+7. **ORDER BY**
+8. **LIMIT**
+
+## 💡 Finally,三个互动思考题
 
 1. **实践与理论**：
 在实际工作中，你遇到过哪些SQL挑战？《SQL Cookbook》中的哪些技巧可能帮助你解决这些问题？分享一个你曾经遇到的复杂查询问题及其解决方案。
