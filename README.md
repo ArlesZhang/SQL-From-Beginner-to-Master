@@ -1,6 +1,10 @@
 # SQL-From-Beginner-to-Master
 > A complete journey from SQL fundamentals to mastery. Based on SQL Queries for Mere Mortals (core) + SQL Cookbook (practice), this repo blends structured learning with real-world projects to build a reusable, portable SQL skillset. > Future: advanced optimization with High Performance MySQL.
 
+🎇Learning Tips-“知识引擎”（Knowledge Engine）:
+
+1. 构建框架（Architecting） -> 2. 夯实基础（Foundating） -> 3. 实战填充（Warfighting） -> 4. 产出贡献（Contributing） -> 5. 复制迁移（Replicating）
+   
 ---
 
 🎯 Strategic Positioning
