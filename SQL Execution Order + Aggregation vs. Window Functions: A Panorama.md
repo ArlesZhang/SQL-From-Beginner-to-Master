@@ -1,4 +1,4 @@
-# Today My SQL Learning Output（执行顺序 & 聚合 vs 窗口函数 & HAVING 分界线）
+# Today My SQL Learning Output（Execution Order & Aggregation vs. Window Functions & HAVING Boundary）
 
 > 2025.9.9 | by Arles Zhang
  
