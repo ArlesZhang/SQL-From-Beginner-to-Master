@@ -63,7 +63,23 @@
 3. **找 Shuffle / PartitionCols** → 看数据是按什么列分区的
 4. **找全局计算** → 聚合 / join / 窗口函数
 5. **找排序 / limit** → 是否推迟到最后
-
+```sql
+1. TableScan（扫描数据）
+   ↓
+2. Filter（过滤）
+   ↓
+3. Projection（列裁剪）
+   ↓
+4. Local Aggregation / Local Processing（本地预聚合、预处理）
+   ↓
+5. Shuffle / Exchange（数据重分布）
+   ↓
+6. Global Aggregation / Join / Window（全局计算）
+   ↓
+7. Sort / Limit（排序、取前 N）
+   ↓
+8. Output（返回结果）
+```
 **口诀**：
 > 扫（Scan） → 砍（Filter） → 剪（Projection） → 先算（Local） → 搬（Shuffle） → 总算（Global） → 排（Sort） → 出（Output）
 
