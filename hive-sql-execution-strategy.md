@@ -62,6 +62,39 @@
 - 一次性分析 → CTE
 - 逻辑封装 → 视图
 
+### 黄金实践指南（总结）
+为了写出最通用、最不容易出错的SQL脚本，请遵循以下法则：
+
+1. 默认假设环境是“严格的”：总是假设你的脚本会在Hive CLI这种需要显式分隔的环境中运行。
+
+2. 显式使用分号;：在每个独立的语句（尤其是DDL）后面都加上分号。
+
+3. 手动分批：在脚本中，用清晰的注释-- --- Batch 1 ---来划分不同的执行批次。
+
+4. 了解你的工具：弄清楚你用的IDE（DBeaver、DataGrip等）的 “执行脚本” 和 “执行语句” 快捷键分别是哪个。
+
+5. 测试单批执行：在开发复杂脚本时，永远不要一次性执行全部。应该逐个批次执行，确保每步都成功，再进行下一步。
+
+你的脚本应该永远这样写：
+
+```sql
+-- ################# Batch 1: Register UDF #################
+CREATE TEMPORARY FUNCTION UDFJsonAsArray AS 'cn.xxx.UDFJsonAsArray'
+USING JAR 'hdfs://path/to.jar';
+
+-- ################# Batch 2: Create Temp Table #################
+CREATE TEMPORARY TABLE IF NOT EXISTS record_check_tmp1 AS 
+SELECT ... 
+LATERAL VIEW EXPLODE(...) ...;
+
+-- ################# Batch 3: Main Query #################
+SELECT 
+    ...
+FROM ...
+LEFT JOIN ...;
+```
+按照这个规则，你的脚本在任何工具和环境中都能稳定运行。
+
 ---
 
 ## 5️⃣ 今日关键收获
